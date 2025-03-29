@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Market Stocks</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="mb-4">Available Market Stocks</h2>
+    <table class="table table-bordered">
+        <thead class="table-dark">
+        <tr>
+            <th>Stock Code</th>
+            <th>Stock Name</th>
+            <th>Stock Price ($)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="stock : ${stocks}">
+            <td th:text="${stock.stockCode}"></td>
+            <td th:text="${stock.stockName}"></td>
+            <td th:text="${stock.price}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
